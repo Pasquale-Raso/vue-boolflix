@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-for="produzione in produzioni" :key="produzione.id">
-      {{ produzione.name }}
-    </div>
+    <!-- <div v-for="produzione in produzioni" :key="produzione.id">
+      {{ produzione.title }}
+    </div> -->
   </div>
 </template>
 
@@ -15,5 +15,5 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="scss">
 </style>
