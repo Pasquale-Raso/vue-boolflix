@@ -8,11 +8,14 @@
         </div>
       </div>
     </div>
-    <h1 class="text-center mt-2">SERIE</h1>
+
+    <!-- _______________________________________________ -->
+
     <div class="row">
+      <h1 class="text-center mt-2">SERIE</h1>
       <div class="d-flex flex-wrap col-12 col-sm-4 col-md-10 col-lg-12 m-2">
-        <div v-for="result in results" :key="result.id">
-          <Card :item="result" />
+        <div v-for="tvResult in tvResults" :key="tvResult.id">
+          <Card :item="tvResult" />
         </div>
       </div>
     </div>
@@ -28,6 +31,7 @@ export default {
     Card: Card,
   },
   props: ["results"],
+  propstv: ["tvResults"],
 };
 </script>
 

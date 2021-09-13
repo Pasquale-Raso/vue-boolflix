@@ -18,12 +18,11 @@
           <i
             v-for="(star, index) in 5"
             :key="index"
-            class="fas fa-star m-1"
+            class="fas fa-star m-1 mt-3"
             :class="stelle(index, item.vote_average) ? 'colorgiallo' : ''"
           ></i>
+          <spam class="m-3">({{ item.vote_average }})</spam>
         </div>
-
-        <div>{{ item.vote_average }}</div>
         <h6 class="overflow-hidden">{{ item.overview }}</h6>
       </div>
     </div>

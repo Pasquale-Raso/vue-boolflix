@@ -56,12 +56,7 @@ export default {
           `${this.baseUri}${this.typeSearchTv}${this.apiKey}&query=${this.testoUtente}`
         )
         .then((res) => {
-          // console.log("Riusltato dell'API", res.data.results);
           this.rispApiTv = res.data.results;
-          // console.log(
-          //   "Riusltato di HEADER.vue",
-          //   this.rispApi
-          // );
 
           if (this.rispApiTv) this.$emit("headerApiTv", this.rispApiTv);
 

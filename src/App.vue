@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header @headerApi="getApi" />
+    <Header @headerApi="getApi" @headerApiTv="getApiTv" />
     <Main :results="appApi" />
   </div>
 </template>
@@ -17,11 +17,15 @@ export default {
   data() {
     return {
       appApi: [],
+      appApiTv: [],
     };
   },
   methods: {
     getApi(headerApi) {
       this.appApi = headerApi;
+    },
+    getApiTv(headerApiTv) {
+      this.appApiTv = headerApiTv;
     },
   },
 };
