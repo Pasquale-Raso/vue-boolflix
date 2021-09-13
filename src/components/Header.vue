@@ -4,13 +4,19 @@
       <p>BOOLFLIX</p>
       <div class="align-items-center d-flex mb-3">
         <input
-          @keyup.enter="search"
+          @keyup.enter="search($emit('headerApi', rispApi))"
           v-model="testoUtente"
           type="text"
           placeholder="Cerca..."
           class="search-box"
         />
-        <button type="button" class="bottone">Cerca</button>
+        <button
+          @click="search($emit('headerApi', rispApi))"
+          type="submit"
+          class="bottone"
+        >
+          Cerca
+        </button>
       </div>
     </div>
   </header>
@@ -22,7 +28,7 @@ export default {
   name: "Header",
   data() {
     return {
-      risultatoDiSearchInHeader: [],
+      rispApi: [],
       testoUtente: "",
       baseUri: "https://api.themoviedb.org/3/",
       typeSearch: "search/movie",
@@ -31,25 +37,18 @@ export default {
   },
   methods: {
     search() {
+      // INVIO RICHIESTA AD API
       axios
         .get(
           `${this.baseUri}${this.typeSearch}${this.apiKey}&query=${this.testoUtente}`
         )
         .then((res) => {
-          console.log("Riusltato dell'api", res.data.results);
-          this.risultatoDiSearchInHeader = res.data.results;
-          console.log(
-            "Riusltato di Header.vue",
-            this.risultatoDiSearchInHeader
-          );
-
-          // INVIO risultatoDiSearch AD APP.VUE
-          this.$emit(
-            "risultatoDiSearchInHeader",
-            this.risultatoDiSearchInHeader
-          );
-
-          // this.produzioni = res.data.results;
+          // console.log("Riusltato dell'API", res.data.results);
+          this.rispApi = res.data.results;
+          // console.log(
+          //   "Riusltato di HEADER.vue",
+          //   this.rispApi
+          // );
         });
     },
   },

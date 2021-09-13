@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <Header @risultatoDiSearchInHeader="getRisultatoDiSearchInAppVue" />
-    <Main />
-    <!-- <Main :produzioni="produzioni" /> -->
+    <Header @headerApi="getApi" />
+    <Main :mainApi="appApi" />
   </div>
 </template>
 
@@ -17,15 +16,12 @@ export default {
   },
   data() {
     return {
-      risultatoDiSearchInAppVue: [],
-
-      // produzioni: [],
+      appApi: [],
     };
   },
   methods: {
-    getRisultatoDiSearchInAppVue(RisultatoDiSearchInAppVue) {
-      this.risultatoDiSearchInHeader = RisultatoDiSearchInAppVue;
-      console.log("Riusltato di app.vue", RisultatoDiSearchInAppVue);
+    getApi(headerApi) {
+      this.appApi = headerApi;
     },
   },
 };

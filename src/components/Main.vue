@@ -1,17 +1,19 @@
 <template>
   <div>
-    <!-- <div v-for="produzione in produzioni" :key="produzione.id">
-      {{ produzione.title }}
-    </div> -->
+    <div v-for="mainApi in mainApis" :key="mainApi.id">
+      {{ this.mainApi[0].title }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "Main",
-  props: {
-    produzioni: Array,
+  props: ["mainApi"],
+  data() {
+    return {};
   },
+  methods: {},
 };
 </script>
 
