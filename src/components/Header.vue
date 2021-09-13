@@ -22,10 +22,12 @@ export default {
   name: "Header",
   data() {
     return {
+      rispApiTv: [],
       rispApi: [],
       testoUtente: "",
       baseUri: "https://api.themoviedb.org/3/",
       typeSearch: "search/movie",
+      typeSearchTv: "search/tv",
       apiKey: "?api_key=1c48c3a20a3d03674636d8f324d2b42d",
     };
   },
@@ -45,6 +47,23 @@ export default {
           // );
 
           if (this.rispApi) this.$emit("headerApi", this.rispApi);
+
+          // resetto tsto inserito da utente
+          // this.testoUtente = "";
+        });
+      axios
+        .get(
+          `${this.baseUri}${this.typeSearchTv}${this.apiKey}&query=${this.testoUtente}`
+        )
+        .then((res) => {
+          // console.log("Riusltato dell'API", res.data.results);
+          this.rispApiTv = res.data.results;
+          // console.log(
+          //   "Riusltato di HEADER.vue",
+          //   this.rispApi
+          // );
+
+          if (this.rispApiTv) this.$emit("headerApiTv", this.rispApiTv);
 
           // resetto tsto inserito da utente
           // this.testoUtente = "";
