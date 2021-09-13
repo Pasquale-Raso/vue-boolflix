@@ -4,19 +4,13 @@
       <p>BOOLFLIX</p>
       <div class="align-items-center d-flex mb-3">
         <input
-          @keyup.enter="search($emit('headerApi', rispApi))"
+          @keyup.enter="search"
           v-model="testoUtente"
           type="text"
           placeholder="Cerca..."
           class="search-box"
         />
-        <button
-          @click="search($emit('headerApi', rispApi))"
-          type="submit"
-          class="bottone"
-        >
-          Cerca
-        </button>
+        <button @click="search" type="submit" class="bottone">Cerca</button>
       </div>
     </div>
   </header>
@@ -49,6 +43,11 @@ export default {
           //   "Riusltato di HEADER.vue",
           //   this.rispApi
           // );
+
+          if (this.rispApi) this.$emit("headerApi", this.rispApi);
+
+          // resetto tsto inserito da utente
+          this.testoUtente = "";
         });
     },
   },

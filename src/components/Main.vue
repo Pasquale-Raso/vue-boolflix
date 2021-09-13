@@ -1,19 +1,30 @@
 <template>
   <div>
-    <div v-for="mainApi in mainApis" :key="mainApi.id">
-      {{ this.mainApi[0].title }}
+    <div>
+      <Card :cardApi="mainApiforCard" />
     </div>
   </div>
 </template>
 
 <script>
+import Card from "@/components/Card.vue";
+
 export default {
   name: "Main",
+  components: {
+    Card: Card,
+  },
   props: ["mainApi"],
   data() {
-    return {};
+    return {
+      mainApiforCard: [],
+    };
   },
-  methods: {},
+  methods: {
+    getMeinApi(props, mainApi) {
+      this.mainApiforCard = (props, mainApi);
+    },
+  },
 };
 </script>
 
