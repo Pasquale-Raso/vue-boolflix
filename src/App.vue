@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header @headerApi="getApi" />
-    <Main :mainApi="appApi" />
+    <Main :results="appApi" />
   </div>
 </template>
 

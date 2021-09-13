@@ -47,7 +47,7 @@ export default {
           if (this.rispApi) this.$emit("headerApi", this.rispApi);
 
           // resetto tsto inserito da utente
-          this.testoUtente = "";
+          // this.testoUtente = "";
         });
     },
   },
