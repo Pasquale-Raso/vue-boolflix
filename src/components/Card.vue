@@ -2,9 +2,12 @@
   <div>
     <div class="boxCard overflow-auto text-center m-2">
       <img
+        v-if="item.poster_path"
         class="img w-100"
         :src="`https://image.tmdb.org/t/p/w342/${item.poster_path}`"
       />
+      <img v-else class="img w-100" :src="require(`@/assets/default.jpg`)" />
+
       <div class="d-none box-info p-3">
         <h3>{{ item.title }}</h3>
         <h6>{{ item.original_title }}</h6>

@@ -50,7 +50,7 @@ export default {
           if (this.rispApi) this.$emit("headerApi", this.rispApi);
 
           // resetto tsto inserito da utente
-          // this.testoUtente = "";
+          this.testoUtente = "";
         });
 
       //  _____________________tv________________________
@@ -65,7 +65,7 @@ export default {
           if (this.rispApiTv) this.$emit("headerApiTv", this.rispApiTv);
 
           // resetto tsto inserito da utente
-          // this.testoUtente = "";
+          this.testoUtente = "";
         });
     },
   },
