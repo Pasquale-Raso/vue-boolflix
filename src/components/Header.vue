@@ -34,6 +34,7 @@ export default {
   methods: {
     search() {
       // INVIO RICHIESTA AD API
+      //  _____________________film________________________
       axios
         .get(
           `${this.baseUri}${this.typeSearch}${this.apiKey}&query=${this.testoUtente}`
@@ -51,6 +52,9 @@ export default {
           // resetto tsto inserito da utente
           // this.testoUtente = "";
         });
+
+      //  _____________________tv________________________
+
       axios
         .get(
           `${this.baseUri}${this.typeSearchTv}${this.apiKey}&query=${this.testoUtente}`

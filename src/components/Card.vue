@@ -21,7 +21,7 @@
             class="fas fa-star m-1 mt-3"
             :class="stelle(index, item.vote_average) ? 'colorgiallo' : ''"
           ></i>
-          <spam class="m-3">({{ item.vote_average }})</spam>
+          <span class="m-3">({{ item.vote_average }})</span>
         </div>
         <h6 class="overflow-hidden">{{ item.overview }}</h6>
       </div>
@@ -36,7 +36,7 @@ export default {
   components: {},
   data() {
     return {
-      bandiere: ["en", "it"],
+      bandiere: ["en", "it", "de", "fr", "es"],
     };
   },
   methods: {
